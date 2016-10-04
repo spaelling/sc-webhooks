@@ -40,8 +40,8 @@
             // serviceInstaller1
             // 
             this.serviceInstaller1.Description = "SC webhook API";
-            this.serviceInstaller1.DisplayName = "Scwebhook";
-            this.serviceInstaller1.ServiceName = "Scwebhook";
+            this.serviceInstaller1.DisplayName = "SC Webhook";
+            this.serviceInstaller1.ServiceName = "scwebhook";
             this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller

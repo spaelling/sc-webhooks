@@ -10,10 +10,28 @@ using System.Threading.Tasks;
 
 using System.Runtime.InteropServices;
 
+// SCSM //
+
+// for Registry
+using Microsoft.Win32;
+// from Microsoft.EnterpriseManagement.Core.dll
+using Microsoft.EnterpriseManagement;
+using Microsoft.EnterpriseManagement.Common;
+using Microsoft.EnterpriseManagement.Configuration;
+
+// from Microsoft.EnterpriseManagement.UI.SdkDataAccess.dll
+using Microsoft.EnterpriseManagement.UI.SdkDataAccess;
+using Microsoft.EnterpriseManagement.UI.SdkDataAccess.DataAdapters;
+
+// from Microsoft.EnterpriseManagement.UI.Foundation.dll
+using Microsoft.EnterpriseManagement.UI.DataModel;
+using Microsoft.EnterpriseManagement.ConsoleFramework;
+
 namespace scwebhook
 {
     public partial class Scwebhook : ServiceBase
     {
+        protected EnterpriseManagementGroup enterpriseMngmtGrp;
 
         [DllImport("advapi32.dll", SetLastError = true)]
         private static extern bool SetServiceStatus(IntPtr handle, ref ServiceStatus serviceStatus);
@@ -70,6 +88,25 @@ namespace scwebhook
             timer.Elapsed += new System.Timers.ElapsedEventHandler(this.OnTimer);
             timer.Start();
 
+            //Get the server name to connect to
+            String strServerName = Registry.GetValue(
+                "HKEY_CURRENT_USER\\Software\\Microsoft\\System Center\\2010\\Service Manager\\Console\\User Settings", 
+                "SDKServiceMachine", 
+                "localhost").ToString();
+
+            try
+            {
+                //Connect to the server
+                enterpriseMngmtGrp = new EnterpriseManagementGroup(strServerName);
+
+                eventLog1.WriteEntry("Connected to SCSM SDK@" + strServerName);
+            }
+            catch (Exception e)
+            {
+                eventLog1.WriteEntry("Unable to connect to SCSM SDK@" + strServerName + "\nError was" + e.Message);
+            }
+
+            // FE3B3QW-D22-21730C819N
             // Update the service state to Running.
             serviceStatus.dwCurrentState = ServiceState.SERVICE_RUNNING;
             SetServiceStatus(this.ServiceHandle, ref serviceStatus);

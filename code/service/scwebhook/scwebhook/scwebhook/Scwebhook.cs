@@ -63,6 +63,7 @@ namespace scwebhook
         {
             InitializeComponent();
             eventLog1 = new System.Diagnostics.EventLog();
+            
             if (!System.Diagnostics.EventLog.SourceExists(Constants.EVENT_LOG_SOURCE))
             {
                 System.Diagnostics.EventLog.CreateEventSource(
@@ -74,6 +75,10 @@ namespace scwebhook
 
         protected override void OnStart(string[] args)
         {
+
+            #if DEBUG
+            System.Threading.Thread.Sleep(10000);
+            #endif
             eventLog1.WriteEntry("In OnStart");
 
             // Update the service state to Start Pending.
@@ -89,10 +94,12 @@ namespace scwebhook
             timer.Start();
 
             //Get the server name to connect to
-            String strServerName = Registry.GetValue(
-                "HKEY_CURRENT_USER\\Software\\Microsoft\\System Center\\2010\\Service Manager\\Console\\User Settings", 
-                "SDKServiceMachine", 
-                "localhost").ToString();
+            String strServerName = "localhost";
+                
+                //Registry.GetValue(
+                //"HKEY_CURRENT_USER\\Software\\Microsoft\\System Center\\2010\\Service Manager\\Console\\User Settings", 
+                //"SDKServiceMachine", 
+                //"localhost").ToString();
 
             try
             {

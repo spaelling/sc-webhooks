@@ -77,7 +77,7 @@ namespace scwebhook
         {
 
             #if DEBUG
-            System.Threading.Thread.Sleep(10000);
+            System.Threading.Thread.Sleep(1000);
             #endif
             eventLog1.WriteEntry("In OnStart");
 

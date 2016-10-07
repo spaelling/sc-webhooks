@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scwebhook", "scwebhook\scwebhook.csproj", "{A38C3897-EB24-4548-8AE0-6E4B28B42741}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scsmwh", "scsmwh\scsmwh.csproj", "{283FAE6F-FF1B-4287-BECB-9F2E274A0FDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A38C3897-EB24-4548-8AE0-6E4B28B42741}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A38C3897-EB24-4548-8AE0-6E4B28B42741}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A38C3897-EB24-4548-8AE0-6E4B28B42741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{283FAE6F-FF1B-4287-BECB-9F2E274A0FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{283FAE6F-FF1B-4287-BECB-9F2E274A0FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{283FAE6F-FF1B-4287-BECB-9F2E274A0FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{283FAE6F-FF1B-4287-BECB-9F2E274A0FDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

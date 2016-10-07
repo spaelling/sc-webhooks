@@ -244,3 +244,4 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 code/service/scwebhook/scwebhook/scwebhook/Tools/Credentials.xml
+code/service/scwebhook/scwebhook/scwebhook/Tools/postbuildparams.txt

@@ -35,6 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.EnterpriseManagement.Core">
+      <HintPath>..\..\..\..\..\..\..\..\temp\scwebhook\Microsoft.EnterpriseManagement.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.Foundation">
+      <HintPath>..\..\..\..\..\..\..\..\temp\scwebhook\Microsoft.EnterpriseManagement.UI.Foundation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.SdkDataAccess">
+      <HintPath>..\..\..\..\..\..\..\..\temp\scwebhook\Microsoft.EnterpriseManagement.UI.SdkDataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />

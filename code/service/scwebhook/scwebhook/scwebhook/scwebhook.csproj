@@ -82,9 +82,15 @@
       <DependentUpon>Scwebhook.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\scsmwh\scsmwh.csproj">
+      <Project>{283fae6f-ff1b-4287-becb-9f2e274a0fdc}</Project>
+      <Name>scsmwh</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>echo powershell "start-process powershell.exe -ArgumentList @('-NoExit', '-File $(ProjectDir)tools\postbuild.ps1 -TargetPath $(TargetPath) -TargetMachine "ctsm1-dev"')" -RedirectStandardError "$(TargetDir)postbuild.log"</PostBuildEvent>
+    <PostBuildEvent>powershell "start-process powershell.exe -ArgumentList @('-NoExit', '-File $(ProjectDir)tools\postbuild.ps1 -TargetPath $(TargetPath)')" -RedirectStandardError "$(TargetDir)postbuild.log"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

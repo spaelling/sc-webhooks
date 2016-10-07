@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scwebhook", "scwebhook\scwebhook.csproj", "{A38C3897-EB24-4548-8AE0-6E4B28B42741}"
+	ProjectSection(ProjectDependencies) = postProject
+		{283FAE6F-FF1B-4287-BECB-9F2E274A0FDC} = {283FAE6F-FF1B-4287-BECB-9F2E274A0FDC}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scsmwh", "scsmwh\scsmwh.csproj", "{283FAE6F-FF1B-4287-BECB-9F2E274A0FDC}"
 EndProject
